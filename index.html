@@ -1,0 +1,1151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Mark Chibala | Web Developer & Designer Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Mark Chibala – Professional Web Developer specializing in modern websites, PWAs, and digital solutions for businesses. Let's build something amazing together." />
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Mark Chibala | Web Developer & Designer" />
+  <meta property="og:description" content="Professional Web Developer specializing in modern websites, PWAs, and digital solutions." />
+  <meta property="og:type" content="website" />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6366f1',
+            secondary: '#8b5cf6',
+            accent: '#f59e0b'
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 3s ease-in-out infinite',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    ::selection {
+      background-color: rgba(99, 102, 241, 0.2);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6, #f59e0b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .gradient-bg {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    }
+
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #6366f1, #8b5cf6);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .hero-image {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .tech-badge {
+      background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+      border: 1px solid #cbd5e1;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: #6366f1;
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    }
+
+    .social-icon {
+      transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-3px) scale(1.1);
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #6366f1, #8b5cf6);
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 text-gray-800">
+
+<!-- Navigation -->
+<header class="fixed top-0 w-full bg-white/90 backdrop-blur-lg shadow-sm z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+          <span class="text-white font-bold">MC</span>
+        </div>
+        <div>
+          <span class="font-extrabold text-xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            Mark Chibala
+          </span>
+          <p class="text-xs text-gray-500">Web Developer</p>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="#home" class="nav-link font-medium text-gray-700 hover:text-primary transition-colors">
+          Home
+        </a>
+        <a href="#about" class="nav-link font-medium text-gray-700 hover:text-primary transition-colors">
+          About
+        </a>
+        <a href="#skills" class="nav-link font-medium text-gray-700 hover:text-primary transition-colors">
+          Skills
+        </a>
+        <a href="#services" class="nav-link font-medium text-gray-700 hover:text-primary transition-colors">
+          Services
+        </a>
+        <a href="#projects" class="nav-link font-medium text-gray-700 hover:text-primary transition-colors">
+          Projects
+        </a>
+        <a href="#contact" class="px-6 py-2 gradient-bg text-white font-semibold rounded-full hover:shadow-lg transition-shadow">
+          Hire Me
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobileMenuButton" class="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div id="mobileMenu" class="md:hidden hidden bg-white border-t shadow-lg">
+    <div class="px-4 py-6 space-y-4">
+      <a href="#home" class="block px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">
+        Home
+      </a>
+      <a href="#about" class="block px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">
+        About
+      </a>
+      <a href="#skills" class="block px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">
+        Skills
+      </a>
+      <a href="#services" class="block px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">
+        Services
+      </a>
+      <a href="#projects" class="block px-4 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">
+        Projects
+      </a>
+      <a href="#contact" class="block px-4 py-3 gradient-bg text-white font-semibold rounded-lg text-center hover:shadow-lg transition-shadow">
+        Hire Me
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="pt-16">
+
+<!-- Hero Section -->
+<section id="home" class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-28 md:pb-24">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Hero Content -->
+      <div class="space-y-8">
+        <div class="space-y-4">
+          <span class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-secondary/10 text-primary font-semibold text-sm">
+            <i class="fas fa-code mr-2"></i>
+            Full-Stack Web Developer
+          </span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+            Building Digital
+            <span class="gradient-text">Solutions</span>
+            That Work
+          </h1>
+          <p class="text-lg text-gray-600 max-w-lg">
+            I create modern, responsive websites and web applications that help businesses grow, 
+            engage customers, and achieve their digital goals.
+          </p>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap gap-4">
+          <a href="#contact" class="px-8 py-3 gradient-bg text-white font-semibold rounded-full hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+            <i class="fas fa-rocket mr-2"></i>
+            Start Your Project
+          </a>
+          <a href="#projects" class="px-8 py-3 border-2 border-primary text-primary font-semibold rounded-full hover:bg-primary hover:text-white transition-all duration-300">
+            <i class="fas fa-eye mr-2"></i>
+            View My Work
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="flex flex-wrap gap-8 pt-8">
+          <div>
+            <div class="text-3xl font-bold gradient-text">50+</div>
+            <div class="text-sm text-gray-500">Projects Completed</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold gradient-text">100%</div>
+            <div class="text-sm text-gray-500">Client Satisfaction</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold gradient-text">3+</div>
+            <div class="text-sm text-gray-500">Years Experience</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Image/Illustration -->
+      <div class="relative">
+        <div class="relative hero-image">
+          <div class="w-full max-w-md mx-auto">
+            <div class="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl p-8">
+              <div class="bg-white rounded-xl shadow-2xl p-6">
+                <div class="flex items-center space-x-4 mb-6">
+                  <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center">
+                    <i class="fas fa-code text-white text-xl"></i>
+                  </div>
+                  <div>
+                    <div class="font-bold">Code Editor</div>
+                    <div class="text-sm text-gray-500">Working on your project</div>
+                  </div>
+                </div>
+                <div class="space-y-3">
+                  <div class="flex items-center space-x-2">
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    <div class="text-sm font-mono text-gray-700">$ npm start</div>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="text-sm font-mono text-gray-700">Compiling...</div>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <div class="w-3 h-3 rounded-full bg-primary"></div>
+                    <div class="text-sm font-mono text-gray-700">Your website is ready!</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute -top-4 -left-4 w-20 h-20 bg-yellow-400/20 rounded-full blur-xl"></div>
+        <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-xl"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+    <a href="#about" class="animate-bounce">
+      <div class="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
+        <div class="w-1 h-3 bg-primary rounded-full mt-2"></div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span class="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-secondary/10 text-primary font-semibold text-sm mb-4">
+        <i class="fas fa-user mr-2"></i>
+        About Me
+      </span>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        Let's Build Something
+        <span class="gradient-text">Amazing</span>
+        Together
+      </h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Passionate developer focused on creating digital solutions that make a real impact
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- About Content -->
+      <div class="space-y-6">
+        <h3 class="text-2xl font-bold">
+          I Turn Ideas Into
+          <span class="gradient-text">Digital Reality</span>
+        </h3>
+        <p class="text-gray-600 leading-relaxed">
+          I'm Mark Chibala, a dedicated web developer with a passion for creating clean, 
+          functional, and beautiful digital experiences. With over 3 years of experience, 
+          I've helped businesses establish their online presence and achieve their goals 
+          through custom web solutions.
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          My approach combines technical expertise with a deep understanding of user needs, 
+          ensuring that every project not only looks great but also delivers tangible results.
+        </p>
+        
+        <div class="pt-4">
+          <a href="#contact" class="inline-flex items-center text-primary font-semibold hover:underline">
+            Let's Discuss Your Project
+            <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Skills Preview -->
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-gradient-to-br from-gray-50 to-white p-6 rounded-2xl shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center mb-4">
+            <i class="fas fa-laptop-code text-white text-xl"></i>
+          </div>
+          <h4 class="font-bold mb-2">Frontend Development</h4>
+          <p class="text-sm text-gray-600">Modern, responsive interfaces</p>
+        </div>
+        
+        <div class="bg-gradient-to-br from-gray-50 to-white p-6 rounded-2xl shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center mb-4">
+            <i class="fas fa-server text-white text-xl"></i>
+          </div>
+          <h4 class="font-bold mb-2">Backend Integration</h4>
+          <p class="text-sm text-gray-600">Secure & scalable solutions</p>
+        </div>
+        
+        <div class="bg-gradient-to-br from-gray-50 to-white p-6 rounded-2xl shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center mb-4">
+            <i class="fas fa-mobile-alt text-white text-xl"></i>
+          </div>
+          <h4 class="font-bold mb-2">Mobile Responsive</h4>
+          <p class="text-sm text-gray-600">Works perfectly on all devices</p>
+        </div>
+        
+        <div class="bg-gradient-to-br from-gray-50 to-white p-6 rounded-2xl shadow-sm border border-gray-100">
+          <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center mb-4">
+            <i class="fas fa-bolt text-white text-xl"></i>
+          </div>
+          <h4 class="font-bold mb-2">Fast Performance</h4>
+          <p class="text-sm text-gray-600">Optimized for speed</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="py-20 bg-gradient-to-b from-white to-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span class="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-secondary/10 text-primary font-semibold text-sm mb-4">
+        <i class="fas fa-tools mr-2"></i>
+        My Skills
+      </span>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        Technologies I
+        <span class="gradient-text">Work With</span>
+      </h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Mastery of modern web technologies to deliver exceptional results
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Frontend Skills -->
+      <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 card-hover">
+        <div class="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center mb-6">
+          <i class="fas fa-palette text-white text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-4">Frontend Development</h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="tech-badge px-4 py-2 rounded-full text-sm font-medium">HTML5</span>
+          <span class="tech-badge px-4 py-2 rounded-full text-sm font-medium">CSS3</span>
+          <span class="tech-badge px-4 py-2 rounded-full text-sm font-medium">JavaScript</span>
+          <span class="tech-badge px-4 py-2 rounded-full text-sm font-medium">React</span>
+          <span class="tech-badge px-4 py-2 rounded-full text-sm font-medium">Vue.js</span>
+          <span class="tech-badge px-4 py-2 rounded-full text-sm font-medium">Tailwind CSS</span>
+        </div>
+      </div>
+
+      <!-- Backend Skills -->
+      <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 card-hover">
+        <div class="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center mb-6">
+          <i class="fas fa-database text-white text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-4">Backend & Databases</h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="tech-badge px-4 py-2 rounded-full text-sm font-medium">Node.js</span>
+          <span class="tech-badge px-4 py-2 rounded-full text-sm font-medium">Express</span>
+          <span class="tech-badge px-4 py-2 rounded-full text-sm font-medium">PHP</span>
+          <span class="tech-badge px-4 py-2 rounded-full text-sm font-medium">MySQL</span>
+          <span class="tech-badge px-4 py-2 rounded-full text-sm font-medium">MongoDB</span>
+          <span class="tech-badge px-4 py-2 rounded-full text-sm font-medium">Firebase</span>
+        </div>
+      </div>
+
+      <!-- Tools & Others -->
+      <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 card-hover">
+        <div class="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center mb-6">
+          <i class="fas fa-cogs text-white text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-4">Tools & Platforms</h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="tech-badge px-4 py-2 rounded-full text-sm font-medium">Git</span>
+          <span class="tech-badge px-4 py-2 rounded-full text-sm font-medium">GitHub</span>
+          <span class="tech-badge px-4 py-2 rounded-full text-sm font-medium">Netlify</span>
+          <span class="tech-badge px-4 py-2 rounded-full text-sm font-medium">Vercel</span>
+          <span class="tech-badge px-4 py-2 rounded-full text-sm font-medium">Figma</span>
+          <span class="tech-badge px-4 py-2 rounded-full text-sm font-medium">VS Code</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span class="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-secondary/10 text-primary font-semibold text-sm mb-4">
+        <i class="fas fa-concierge-bell mr-2"></i>
+        My Services
+      </span>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        How I Can
+        <span class="gradient-text">Help You</span>
+      </h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Comprehensive web development services tailored to your needs
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Service Cards -->
+      <div class="bg-gradient-to-b from-gray-50 to-white p-8 rounded-2xl shadow-sm border border-gray-100 card-hover">
+        <div class="w-16 h-16 rounded-xl gradient-bg flex items-center justify-center mb-6">
+          <i class="fas fa-globe text-white text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Custom Website Development</h3>
+        <p class="text-gray-600 mb-6">
+          Fully customized websites built from scratch to match your brand and business objectives.
+        </p>
+        <ul class="space-y-2">
+          <li class="flex items-center">
+            <i class="fas fa-check text-green-500 mr-3"></i>
+            <span>Responsive Design</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-check text-green-500 mr-3"></i>
+            <span>SEO Optimized</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-check text-green-500 mr-3"></i>
+            <span>Fast Loading</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-gradient-to-b from-gray-50 to-white p-8 rounded-2xl shadow-sm border border-gray-100 card-hover">
+        <div class="w-16 h-16 rounded-xl gradient-bg flex items-center justify-center mb-6">
+          <i class="fas fa-mobile-alt text-white text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Progressive Web Apps</h3>
+        <p class="text-gray-600 mb-6">
+          Modern PWAs that work offline, load instantly, and provide app-like experiences.
+        </p>
+        <ul class="space-y-2">
+          <li class="flex items-center">
+            <i class="fas fa-check text-green-500 mr-3"></i>
+            <span>Offline Functionality</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-check text-green-500 mr-3"></i>
+            <span>Push Notifications</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-check text-green-500 mr-3"></i>
+            <span>Mobile Optimization</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-gradient-to-b from-gray-50 to-white p-8 rounded-2xl shadow-sm border border-gray-100 card-hover">
+        <div class="w-16 h-16 rounded-xl gradient-bg flex items-center justify-center mb-6">
+          <i class="fas fa-paint-brush text-white text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3">UI/UX Design & Redesign</h3>
+        <p class="text-gray-600 mb-6">
+          Improve your existing website's user experience and interface without changing branding.
+        </p>
+        <ul class="space-y-2">
+          <li class="flex items-center">
+            <i class="fas fa-check text-green-500 mr-3"></i>
+            <span>User Research</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-check text-green-500 mr-3"></i>
+            <span>Wireframing</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-check text-green-500 mr-3"></i>
+            <span>Prototyping</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-gradient-to-b from-gray-50 to-white p-8 rounded-2xl shadow-sm border border-gray-100 card-hover">
+        <div class="w-16 h-16 rounded-xl gradient-bg flex items-center justify-center mb-6">
+          <i class="fas fa-cogs text-white text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Website Maintenance</h3>
+        <p class="text-gray-600 mb-6">
+          Ongoing support, updates, and optimizations to keep your website running smoothly.
+        </p>
+        <ul class="space-y-2">
+          <li class="flex items-center">
+            <i class="fas fa-check text-green-500 mr-3"></i>
+            <span>Security Updates</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-check text-green-500 mr-3"></i>
+            <span>Performance Monitoring</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-check text-green-500 mr-3"></i>
+            <span>Backup Management</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-gradient-to-b from-gray-50 to-white p-8 rounded-2xl shadow-sm border border-gray-100 card-hover">
+        <div class="w-16 h-16 rounded-xl gradient-bg flex items-center justify-center mb-6">
+          <i class="fas fa-envelope text-white text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Form & Email Integration</h3>
+        <p class="text-gray-600 mb-6">
+          Custom forms with email notifications, Google Sheets integration, and automation.
+        </p>
+        <ul class="space-y-2">
+          <li class="flex items-center">
+            <i class="fas fa-check text-green-500 mr-3"></i>
+            <span>Contact Forms</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-check text-green-500 mr-3"></i>
+            <span>Booking Systems</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-check text-green-500 mr-3"></i>
+            <span>Payment Integration</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-gradient-to-b from-gray-50 to-white p-8 rounded-2xl shadow-sm border border-gray-100 card-hover">
+        <div class="w-16 h-16 rounded-xl gradient-bg flex items-center justify-center mb-6">
+          <i class="fas fa-rocket text-white text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Performance Optimization</h3>
+        <p class="text-gray-600 mb-6">
+          Speed up your existing website for better user experience and SEO rankings.
+        </p>
+        <ul class="space-y-2">
+          <li class="flex items-center">
+            <i class="fas fa-check text-green-500 mr-3"></i>
+            <span>Code Optimization</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-check text-green-500 mr-3"></i>
+            <span>Image Compression</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-check text-green-500 mr-3"></i>
+            <span>Caching Solutions</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-20 bg-gradient-to-b from-white to-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span class="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-secondary/10 text-primary font-semibold text-sm mb-4">
+        <i class="fas fa-briefcase mr-2"></i>
+        Recent Projects
+      </span>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        Featured
+        <span class="gradient-text">Work</span>
+      </h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        A selection of projects that showcase my skills and expertise
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Project 1 -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+        <div class="h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+          <i class="fas fa-shopping-cart text-white text-5xl"></i>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-4">
+            <h3 class="text-xl font-bold">E-commerce Platform</h3>
+            <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full">Full-Stack</span>
+          </div>
+          <p class="text-gray-600 mb-6">
+            Complete online store with product management, cart functionality, and secure checkout.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">React</span>
+            <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">Node.js</span>
+            <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">MongoDB</span>
+          </div>
+          <a href="#" class="inline-flex items-center text-primary font-semibold hover:underline">
+            View Case Study
+            <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+        <div class="h-48 bg-gradient-to-r from-accent to-yellow-400 flex items-center justify-center">
+          <i class="fas fa-calendar-alt text-white text-5xl"></i>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-4">
+            <h3 class="text-xl font-bold">Booking System</h3>
+            <span class="px-3 py-1 bg-accent/10 text-accent text-xs font-semibold rounded-full">PWA</span>
+          </div>
+          <p class="text-gray-600 mb-6">
+            Appointment booking system with calendar integration, notifications, and admin dashboard.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">Vue.js</span>
+            <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">Firebase</span>
+            <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">PWA</span>
+          </div>
+          <a href="#" class="inline-flex items-center text-primary font-semibold hover:underline">
+            View Case Study
+            <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+        <div class="h-48 bg-gradient-to-r from-secondary to-purple-500 flex items-center justify-center">
+          <i class="fas fa-chart-line text-white text-5xl"></i>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-4">
+            <h3 class="text-xl font-bold">Business Dashboard</h3>
+            <span class="px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full">Web App</span>
+          </div>
+          <p class="text-gray-600 mb-6">
+            Data visualization dashboard with real-time analytics, charts, and reporting features.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">JavaScript</span>
+            <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">Chart.js</span>
+            <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">API</span>
+          </div>
+          <a href="#" class="inline-flex items-center text-primary font-semibold hover:underline">
+            View Case Study
+            <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <a href="#" class="inline-flex items-center px-6 py-3 border-2 border-primary text-primary font-semibold rounded-full hover:bg-primary hover:text-white transition-all duration-300">
+        <i class="fas fa-external-link-alt mr-3"></i>
+        View All Projects
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-gradient-to-br from-primary to-secondary text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span class="inline-block px-4 py-2 rounded-full bg-white/20 text-white font-semibold text-sm mb-4">
+        <i class="fas fa-paper-plane mr-2"></i>
+        Get In Touch
+      </span>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        Ready to Start Your
+        <span class="text-accent">Project?</span>
+      </h2>
+      <p class="text-white/80 max-w-2xl mx-auto">
+        Let's discuss how we can bring your ideas to life. Reach out for a free consultation.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12">
+      <!-- Contact Form -->
+      <div class="bg-white rounded-2xl p-8 shadow-xl">
+        <h3 class="text-2xl font-bold text-gray-800 mb-6">Send a Message</h3>
+        
+        <form
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST"
+          id="contactForm"
+          class="space-y-6">
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">
+                Your Name *
+              </label>
+              <input
+                type="text"
+                name="name"
+                required
+                placeholder="John Smith"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg form-input focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+              >
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">
+                Email Address *
+              </label>
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="john@example.com"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg form-input focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+              >
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">
+              Service Needed
+            </label>
+            <select
+              name="service"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg form-input focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
+              <option value="">Select a service</option>
+              <option value="website">Custom Website</option>
+              <option value="pwa">PWA Development</option>
+              <option value="redesign">Website Redesign</option>
+              <option value="maintenance">Website Maintenance</option>
+              <option value="form">Form Integration</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">
+              Project Budget
+            </label>
+            <div class="grid grid-cols-4 gap-2">
+              <button type="button" class="budget-btn px-4 py-2 border border-gray-300 rounded-lg hover:border-primary hover:bg-primary/5 transition-all" data-budget="$500-$1,000">$500-$1K</button>
+              <button type="button" class="budget-btn px-4 py-2 border border-gray-300 rounded-lg hover:border-primary hover:bg-primary/5 transition-all" data-budget="$1,000-$2,500">$1K-$2.5K</button>
+              <button type="button" class="budget-btn px-4 py-2 border border-gray-300 rounded-lg hover:border-primary hover:bg-primary/5 transition-all" data-budget="$2,500-$5,000">$2.5K-$5K</button>
+              <button type="button" class="budget-btn px-4 py-2 border border-gray-300 rounded-lg hover:border-primary hover:bg-primary/5 transition-all" data-budget="$5,000+">$5K+</button>
+            </div>
+            <input type="hidden" name="budget" id="budgetInput">
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">
+              Project Details *
+            </label>
+            <textarea
+              name="message"
+              required
+              rows="5"
+              placeholder="Tell me about your project, goals, timeline, and any specific requirements..."
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg form-input focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full gradient-bg text-white font-semibold py-4 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+            <i class="fas fa-paper-plane mr-2"></i>
+            Send Message
+          </button>
+
+          <p class="text-sm text-gray-500 text-center">
+            I'll get back to you within 24 hours
+          </p>
+        </form>
+      </div>
+
+      <!-- Contact Info & Social -->
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
+                <i class="fas fa-envelope text-accent text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold">Email</h4>
+                <a href="mailto:mark@example.com" class="text-white/80 hover:text-accent transition-colors">
+                  mark@example.com
+                </a>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
+                <i class="fas fa-phone text-accent text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold">Phone</h4>
+                <a href="tel:+260123456789" class="text-white/80 hover:text-accent transition-colors">
+                  +260 123 456 789
+                </a>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
+                <i class="fas fa-map-marker-alt text-accent text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold">Location</h4>
+                <p class="text-white/80">Lusaka, Zambia</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold mb-6">Connect With Me</h3>
+          <div class="flex space-x-4">
+            <a href="https://github.com" target="_blank" class="social-icon w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20">
+              <i class="fab fa-github text-xl"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="social-icon w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20">
+              <i class="fab fa-linkedin-in text-xl"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" class="social-icon w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20">
+              <i class="fab fa-twitter text-xl"></i>
+            </a>
+            <a href="https://wa.me/260123456789" target="_blank" class="social-icon w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20">
+              <i class="fab fa-whatsapp text-xl"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Testimonial -->
+        <div class="bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
+          <div class="flex items-center space-x-4 mb-4">
+            <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+              <i class="fas fa-user text-white"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold">Sarah Johnson</h4>
+              <p class="text-white/60 text-sm">Business Owner</p>
+            </div>
+          </div>
+          <p class="italic text-white/80">
+            "Mark transformed our outdated website into a modern, responsive platform. Our online bookings increased by 300% after the redesign!"
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-300 py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-4 gap-8 mb-8">
+      <div>
+        <div class="flex items-center space-x-3 mb-4">
+          <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+            <span class="text-white font-bold">MC</span>
+          </div>
+          <div>
+            <span class="font-extrabold text-xl text-white">Mark Chibala</span>
+            <p class="text-sm text-gray-400">Web Developer</p>
+          </div>
+        </div>
+        <p class="text-gray-400 text-sm">
+          Creating digital solutions that help businesses grow and succeed.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2">
+          <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+          <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+          <li><a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-4">Services</h4>
+        <ul class="space-y-2">
+          <li class="text-gray-400">Website Development</li>
+          <li class="text-gray-400">PWA Development</li>
+          <li class="text-gray-400">UI/UX Design</li>
+          <li class="text-gray-400">Website Maintenance</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-4">Stay Updated</h4>
+        <p class="text-gray-400 text-sm mb-4">
+          Subscribe to get updates on new services and tips.
+        </p>
+        <div class="flex">
+          <input
+            type="email"
+            placeholder="Your email"
+            class="px-4 py-2 bg-gray-800 text-white rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary w-full"
+          >
+          <button class="px-4 py-2 gradient-bg text-white rounded-r-lg hover:opacity-90 transition-opacity">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-gray-400 text-sm mb-4 md:mb-0">
+        © <span id="year"></span> Mark Chibala. All rights reserved.
+      </p>
+      <div class="flex space-x-6">
+        <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</a>
+        <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 gradient-bg text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hidden">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script>
+  // Mobile Menu Toggle
+  document.getElementById('mobileMenuButton').addEventListener('click', function() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Close mobile menu when clicking links
+  document.querySelectorAll('#mobileMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.add('hidden');
+    });
+  });
+
+  // Set current year in footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Budget selection
+  document.querySelectorAll('.budget-btn').forEach(button => {
+    button.addEventListener('click', function() {
+      // Remove active class from all buttons
+      document.querySelectorAll('.budget-btn').forEach(btn => {
+        btn.classList.remove('border-primary', 'bg-primary/10');
+        btn.classList.add('border-gray-300');
+      });
+      
+      // Add active class to clicked button
+      this.classList.remove('border-gray-300');
+      this.classList.add('border-primary', 'bg-primary/10');
+      
+      // Set hidden input value
+      document.getElementById('budgetInput').value = this.dataset.budget;
+    });
+  });
+
+  // Back to Top Button
+  const backToTopButton = document.getElementById('backToTop');
+  
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      backToTopButton.classList.remove('hidden');
+    } else {
+      backToTopButton.classList.add('hidden');
+    }
+  });
+
+  backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  // Form submission handling
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const submitButton = this.querySelector('button[type="submit"]');
+    const originalText = submitButton.innerHTML;
+    
+    // Show loading state
+    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+    submitButton.disabled = true;
+    
+    // Simulate form submission (in real use, this would be actual Formspree submission)
+    setTimeout(() => {
+      alert('Thank you! Your message has been sent. I\'ll get back to you within 24 hours.');
+      this.reset();
+      submitButton.innerHTML = originalText;
+      submitButton.disabled = false;
+    }, 1500);
+  });
+
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        const headerHeight = document.querySelector('header').offsetHeight;
+        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // Add active class to nav links on scroll
+  const sections = document.querySelectorAll('section[id]');
+  
+  window.addEventListener('scroll', () => {
+    let current = '';
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      
+      if (scrollY >= (sectionTop - 200)) {
+        current = section.getAttribute('id');
+      }
+    });
+    
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.classList.remove('text-primary');
+      link.classList.add('text-gray-700');
+      
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.remove('text-gray-700');
+        link.classList.add('text-primary');
+      }
+    });
+  });
+
+  // Add some interactive animations
+  document.addEventListener('DOMContentLoaded', () => {
+    // Animate elements on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+        }
+      });
+    }, observerOptions);
+    
+    // Observe all sections and cards
+    document.querySelectorAll('section, .card-hover').forEach(el => {
+      observer.observe(el);
+    });
+  });
+</script>
+
+</body>
+</html>
